@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import Avatar from '../../components/Avatar';
 import styles from './Home.styles';
 import Tag from '../../components/Tag';
@@ -18,12 +18,7 @@ export const Home = () => {
 			</View>
 			<View style={styles.container}>
 				<Tag />
-				<MaterialCommunityIcons
-					name="dots-horizontal"
-					size={24}
-					color="gray"
-					style={{ marginLeft: 6 }}
-				/>
+				<Feather name="more-horizontal" size={24} color="gray" style={{ marginLeft: 6 }}/>
 			</View>
 		</Header>
 	);
