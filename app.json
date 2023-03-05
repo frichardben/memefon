@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "memefon",
+    "slug": "memefon",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
