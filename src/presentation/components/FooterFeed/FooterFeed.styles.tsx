@@ -1,21 +1,25 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
 	footerFeedContainer: {
-		flex: 1,
 		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'center'
+		justifyContent: 'center',
+		marginVertical: 16,
 	},
 	footerFeedButton: {
 		flexDirection: 'row',
 		alignItems: 'center',
-		paddingRight: 16
+		paddingRight: 16,
 	},
 	footerFeedText: {
 		marginLeft: 4,
-		color: '#fff'
-	}
+		color: '#fff',
+	},
+	divider: {
+		borderBottomColor: 'white',
+		borderBottomWidth: StyleSheet.hairlineWidth,
+	},
 });
 
 export default styles;
