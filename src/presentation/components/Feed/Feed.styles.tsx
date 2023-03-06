@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
 		color: '#fff',
 		fontSize: 18,
 		marginBottom: 8,
-		paddingHorizontal: 16
+		paddingHorizontal: 16,
 	},
 	feedImage: {
 		width: '100%',
