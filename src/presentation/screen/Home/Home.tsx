@@ -41,6 +41,19 @@ export const Home = () => {
     fetchData();
   }, []);
 
+  const dateDiff = (createdAt: string) => {
+    const datePost = new Date(createdAt).getTime();
+    const today = new Date().getTime();
+    const differentBetweenDay = Math.round(
+      (today - datePost) / (1000 * 60 * 60 * 24)
+    );
+
+    const postDay =
+      differentBetweenDay === 0 ? 'Today' : `${differentBetweenDay} Days Ago`;
+
+    return <Text style={styles.headerPastDay}>{postDay}</Text>;
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <FlatList
@@ -54,12 +67,12 @@ export const Home = () => {
           <>
             <Header key={item._id}>
               <View style={styles.container}>
-                <Avatar photo={item.user.photo} />
+                <Avatar photo={item.user.photo} name={item.user.name} />
                 <View style={styles.headerText}>
                   <Text style={styles.headerUsername}>
                     {item.user.username}
                   </Text>
-                  <Text style={styles.headerPastDay}>{item.createdAt}</Text>
+                  {dateDiff(item.createdAt)}
                 </View>
               </View>
               <View style={styles.container}>
@@ -74,13 +87,14 @@ export const Home = () => {
             </Header>
             <Feed title={item.title} mediaUrl={item.mediaUrl} />
             <FooterFeed
-              linksCount={item.commentsCount}
+              likesCount={item.likesCount}
               commentsCount={item.commentsCount}
             />
           </>
         )}
         onEndReached={fetchData}
         onEndReachedThreshold={0.1}
+        testID="flat-list"
       />
     </SafeAreaView>
   );
