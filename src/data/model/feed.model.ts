@@ -7,7 +7,7 @@ export interface IFeed {
   title: string;
   mediaUrl: string;
   createdAt: string;
-  linksCount: number;
+  likesCount: number;
   commentsCount: number;
   page: number;
 }
